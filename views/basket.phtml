@@ -1,0 +1,26 @@
+<h1>Your Basket</h1>
+
+<div class="horizontal-overflow">
+    <table class="table table--centered horizontal-overflow__table">
+        <thead>
+        <tr>
+            <th class="col-xxs-2">item</th>
+            <th class="col-xxs-6"></th>
+            <th class="col-xxs-2">price</th>
+            <th class="col-xxs-2"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <? foreach ($items as $item): ?>
+        <tr>
+            <td>
+                <img class="img-responsive" src="<?= $item->image_url ?>">
+            </td>
+            <td><?= $item->name ?></td>
+            <td>£<?= $item->price ?></td>
+            <td><a href="/basket/remove/<?= $item->id ?>" class="link-meta link-nowrap"><i class="fa fa-close"></i> remove</a></td>
+        </tr>
+        <? endforeach ?>
+        </tbody>
+    </table>
+</div>
